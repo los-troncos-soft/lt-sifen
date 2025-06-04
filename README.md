@@ -1,2 +1,2 @@
 # lt-sifen
-API rest para generación de comprobante electrónicos de Sifen
+API rest para generación de comprobantes electrónicos de Sifen
