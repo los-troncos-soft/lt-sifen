@@ -55,8 +55,6 @@ public @Data class Emisor {
   private String nombreResponsable;
   @Column(name = "cargo_responsable", nullable = true, length = 255)
   private String cargoResponsable;
-  @Column(name = "tipo_transaccion", nullable = true)
-  private short tipoTransaccion;
   @Column(name = "path_certificado", nullable = true, length = 255)
   private String pathCertificado;
   @Column(name = "password_certificado", nullable = true, length = 50)
