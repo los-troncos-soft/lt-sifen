@@ -6,8 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "emisores")
-@Data
-public class Emisor {
+public @Data class Emisor {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id_emisor")
@@ -33,27 +32,41 @@ public class Emisor {
   @Column(name = "direccion2", nullable = true, length = 255)
   private String direccion2;
   @Column(name = "departamento", nullable = false)
-  private int departamento;
-  @Column(name = "distrito", nullable = true)
-  private int distrito;
+  private short departamento;
+  @Column(name = "idistrito", nullable = true)
+  private short distrito;
   @Column(name = "ciudad", nullable = true)
-  private int ciudad;
+  private short ciudad;
   @Column(name = "telefono", nullable = false, length = 15)
   private String telefono;
   @Column(name = "email", nullable = false, length = 80)
   private String email;
   @Column(name = "sucursal", nullable = true, length = 30)
   private String sucursal;
-  @Column(name = "codigo_actividad", nullable = false, length = 10)
+  @Column(name = "codigo_actividad", nullable = true, length = 10)
   private String codigoActividad;
-  @Column(name = "descripcion_actividad", nullable = false, length = 300)
+  @Column(name = "descripcion_actividad", nullable = true, length = 300)
   private String descripcionActividad;
-  @Column(name = "tipo_doc_responsable", nullable = false)
-  private int tipoDocumentoResponsable;
-  @Column(name = "nro_doc_responsable", nullable = false, length = 20)
+  @Column(name = "tipo_doc_responsable", nullable = true)
+  private short tipoDocumentoResponsable;
+  @Column(name = "nro_doc_responsable", nullable = true, length = 20)
   private String nroDocumentoResposanble;
-  @Column(name = "nombre_responsable", nullable = false, length = 255)
+  @Column(name = "nombre_responsable", nullable = true, length = 255)
   private String nombreResponsable;
-  @Column(name = "cargo_responsable", nullable = false, length = 255)
+  @Column(name = "cargo_responsable", nullable = true, length = 255)
   private String cargoResponsable;
+  @Column(name = "tipo_transaccion", nullable = true)
+  private short tipoTransaccion;
+  @Column(name = "path_certificado", nullable = true, length = 255)
+  private String pathCertificado;
+  @Column(name = "password_certificado", nullable = true, length = 50)
+  private String passwordCertificado;
+  @Column(name = "id_csc_1", nullable = true, length = 5)
+  private String idCsc1;
+  @Column(name = "csc_1", nullable = true, length = 50)
+  private String csc1;
+  @Column(name = "id_csc_2", nullable = true, length = 5)
+  private String idCsc2;
+  @Column(name = "csc_2", nullable = true, length = 50)
+  private String csc2;
 }
