@@ -1,20 +1,25 @@
 package com.lt_soft.sifen.services;
 
+import com.lt_soft.sifen.dtos.EmisorDto;
 import com.lt_soft.sifen.models.Emisor;
 import com.lt_soft.sifen.repositories.EmisorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.modelmapper.ModelMapper;
 
 @Service
 public class EmisorService {
     private final EmisorRepository emisorRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    public EmisorService(EmisorRepository emisorRepository) {
+    public EmisorService(EmisorRepository emisorRepository, ModelMapper modelMapper) {
         this.emisorRepository = emisorRepository;
+        this.modelMapper = modelMapper;
     }
 
-    public Emisor create(Emisor emisor) {
+    public Emisor create(EmisorDto emisorDto) {
+        Emisor emisor = modelMapper.map(emisorDto, Emisor.class);
         return emisorRepository.save(emisor);
     }
 }
