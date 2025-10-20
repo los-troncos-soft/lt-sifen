@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;
 
+import javax.persistence.EntityNotFoundException;
+
 @Service
 public class EmisorService {
     private final EmisorRepository emisorRepository;
@@ -21,5 +23,10 @@ public class EmisorService {
     public Emisor create(EmisorDto emisorDto) {
         Emisor emisor = modelMapper.map(emisorDto, Emisor.class);
         return emisorRepository.save(emisor);
+    }
+
+    public Emisor getById(Long idEmisor) {
+        return emisorRepository.findById(idEmisor)
+                .orElseThrow(() -> new EntityNotFoundException("Emisor no encontrado con id: " + idEmisor));
     }
 }

@@ -1,4 +1,4 @@
-package com.lt_soft.sifen.validators;
+package com.lt_soft.sifen.validators.emisor;
 
 import com.lt_soft.sifen.enums.EDepartamento;
 
@@ -10,7 +10,7 @@ public class DepartamentoValidator implements ConstraintValidator<ValidDepartame
     @Override
     public boolean isValid(Short value, ConstraintValidatorContext context) {
         if (value == null)
-            return true; // O false si querés que sea obligatorio
+            return false; // True == opcional, false == obligatorio
 
         return EDepartamento.getByVal(value) != null;
     }

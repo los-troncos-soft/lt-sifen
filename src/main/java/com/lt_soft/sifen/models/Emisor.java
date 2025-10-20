@@ -16,9 +16,9 @@ public @Data class Emisor {
   @Column(name = "dv", nullable = false, length = 1)
   private String DV;
   @Column(name = "tipo_contribuyente", nullable = false)
-  private int tipoContribuyente;
+  private short tipoContribuyente;
   @Column(name = "tipo_regimen", nullable = false)
-  private int tipoRegimen;
+  private short tipoRegimen;
   @Column(name = "razon_social", nullable = false, length = 255)
   private String razonSocial;
   @Column(name = "nombre_fantasia", nullable = true, length = 255)
@@ -26,7 +26,7 @@ public @Data class Emisor {
   @Column(name = "direccion", nullable = false, length = 255)
   private String direccion;
   @Column(name = "nro_casa", nullable = false)
-  private int nroCasa;
+  private short nroCasa;
   @Column(name = "direccion1", nullable = true, length = 255)
   private String direccion1;
   @Column(name = "direccion2", nullable = true, length = 255)
@@ -43,28 +43,30 @@ public @Data class Emisor {
   private String email;
   @Column(name = "sucursal", nullable = true, length = 30)
   private String sucursal;
-  @Column(name = "codigo_actividad", nullable = true, length = 10)
+  @Column(name = "codigo_actividad", nullable = false, length = 10)
   private String codigoActividad;
-  @Column(name = "descripcion_actividad", nullable = true, length = 300)
+  @Column(name = "descripcion_actividad", nullable = false, length = 300)
   private String descripcionActividad;
-  @Column(name = "tipo_doc_responsable", nullable = true)
+  @Column(name = "tipo_doc_responsable", nullable = false)
   private short tipoDocumentoResponsable;
-  @Column(name = "nro_doc_responsable", nullable = true, length = 20)
+  @Column(name = "nro_doc_responsable", nullable = false, length = 20)
   private String nroDocumentoResposanble;
-  @Column(name = "nombre_responsable", nullable = true, length = 255)
+  @Column(name = "nombre_responsable", nullable = false, length = 255)
   private String nombreResponsable;
-  @Column(name = "cargo_responsable", nullable = true, length = 255)
+  @Column(name = "cargo_responsable", nullable = false, length = 255)
   private String cargoResponsable;
-  @Column(name = "path_certificado", nullable = true, length = 255)
+  @Column(name = "path_certificado", nullable = false, length = 255)
   private String pathCertificado;
-  @Column(name = "password_certificado", nullable = true, length = 50)
+  @Column(name = "password_certificado", nullable = false, length = 50)
   private String passwordCertificado;
-  @Column(name = "id_csc_1", nullable = true, length = 5)
+  @Column(name = "id_csc_1", nullable = false, length = 5)
   private String idCsc1;
-  @Column(name = "csc_1", nullable = true, length = 50)
+  @Column(name = "csc_1", nullable = false, length = 50)
   private String csc1;
   @Column(name = "id_csc_2", nullable = true, length = 5)
   private String idCsc2;
   @Column(name = "csc_2", nullable = true, length = 50)
   private String csc2;
+  @Column(name = "ambiente", nullable = false)
+  private short ambiente;
 }
