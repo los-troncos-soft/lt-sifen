@@ -47,14 +47,6 @@ public @Data class Emisor {
   private String codigoActividad;
   @Column(name = "descripcion_actividad", nullable = false, length = 300)
   private String descripcionActividad;
-  @Column(name = "tipo_doc_responsable", nullable = false)
-  private short tipoDocumentoResponsable;
-  @Column(name = "nro_doc_responsable", nullable = false, length = 20)
-  private String nroDocumentoResposanble;
-  @Column(name = "nombre_responsable", nullable = false, length = 255)
-  private String nombreResponsable;
-  @Column(name = "cargo_responsable", nullable = false, length = 255)
-  private String cargoResponsable;
   @Column(name = "path_certificado", nullable = false, length = 255)
   private String pathCertificado;
   @Column(name = "password_certificado", nullable = false, length = 50)
@@ -63,10 +55,6 @@ public @Data class Emisor {
   private String idCsc1;
   @Column(name = "csc_1", nullable = false, length = 50)
   private String csc1;
-  @Column(name = "id_csc_2", nullable = true, length = 5)
-  private String idCsc2;
-  @Column(name = "csc_2", nullable = true, length = 50)
-  private String csc2;
   @Column(name = "ambiente", nullable = false)
   private short ambiente;
 }

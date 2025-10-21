@@ -58,19 +58,6 @@ public class EmisorDto {
     @NotBlank(message = "La descripción de la actividad es obligatoria")
     private String descripcionActividad;
 
-    @NotNull(message = "El tipo de documento del responsable es obligatorio")
-    @ValidTipoDocumento
-    private short tipoDocumentoResponsable;
-
-    @NotBlank(message = "El nro de documento del responsable es obligatorio")
-    private String nroDocumentoResposanble;
-
-    @NotBlank(message = "El nombre del responsable es obligatorio")
-    private String nombreResponsable;
-
-    @NotBlank(message = "El cargo del responsable es obligatorio")
-    private String cargoResponsable;
-
     @NotBlank(message = "El path del certificado es obligatorio")
     private String pathCertificado;
 
@@ -82,10 +69,6 @@ public class EmisorDto {
 
     @NotBlank(message = "El CSC1 es obligatorio")
     private String csc1;
-
-    private String idCsc2;
-
-    private String csc2;
 
     @NotNull(message = "El ambiente es obligatorio")
     @ValidAmbiente
