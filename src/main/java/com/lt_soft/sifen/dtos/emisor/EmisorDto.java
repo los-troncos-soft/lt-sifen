@@ -1,4 +1,4 @@
-package com.lt_soft.sifen.dtos;
+package com.lt_soft.sifen.dtos.emisor;
 
 import com.lt_soft.sifen.validators.emisor.*;
 import lombok.Data;

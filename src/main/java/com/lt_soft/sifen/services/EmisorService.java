@@ -1,6 +1,6 @@
 package com.lt_soft.sifen.services;
 
-import com.lt_soft.sifen.dtos.EmisorDto;
+import com.lt_soft.sifen.dtos.emisor.EmisorDto;
 import com.lt_soft.sifen.models.Emisor;
 import com.lt_soft.sifen.repositories.EmisorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

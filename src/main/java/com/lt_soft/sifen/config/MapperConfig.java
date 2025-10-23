@@ -1,6 +1,6 @@
 package com.lt_soft.sifen.config;
 
-import com.lt_soft.sifen.dtos.EmisorDto;
+import com.lt_soft.sifen.dtos.emisor.EmisorDto;
 import com.lt_soft.sifen.models.Emisor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
