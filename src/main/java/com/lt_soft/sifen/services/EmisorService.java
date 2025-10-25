@@ -25,8 +25,14 @@ public class EmisorService {
         return emisorRepository.save(emisor);
     }
 
-    public Emisor getById(Long idEmisor) {
+    public Emisor findById(Long idEmisor) {
         return emisorRepository.findById(idEmisor)
-                .orElseThrow(() -> new EntityNotFoundException("Emisor no encontrado con id: " + idEmisor));
+                .orElseThrow(() -> new EntityNotFoundException(String.format("Emisor no encontrado con id: %s", idEmisor)));
+    }
+
+    public Emisor findByRuc(String ruc) {
+        String rucSinDv = ruc.contains("-") ? ruc.split("-")[0] : ruc;
+        return emisorRepository.findByRuc(rucSinDv)
+                .orElseThrow(() -> new EntityNotFoundException(String.format("Emisor no encontrado con RUC: %s", rucSinDv)));
     }
 }

@@ -5,7 +5,6 @@ import com.lt_soft.sifen.utils.LtsUtils;
 import com.roshka.sifen.Sifen;
 import com.roshka.sifen.core.SifenConfig;
 import com.roshka.sifen.core.beans.response.RespuestaConsultaRUC;
-import com.roshka.sifen.internal.util.SifenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class ConsultarRucService {
     public String consultarRucSifen(Long idEmisor, String ruc) {
         try {
             String rucSinDV = ruc.split("-")[0];
-            Emisor emisor = emisorService.getById(idEmisor);
+            Emisor emisor = emisorService.findById(idEmisor);
             SifenConfig config = LtsUtils.buildConfig(emisor);
             Sifen.setSifenConfig(config);
             RespuestaConsultaRUC respuesta = Sifen.consultaRUC(rucSinDV);

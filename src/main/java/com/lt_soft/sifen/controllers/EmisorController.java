@@ -25,9 +25,9 @@ public class EmisorController {
         return ResponseEntity.status(201).body(e);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Emisor> getById(@PathVariable long id) {
-        return ResponseEntity.ok(emisorService.getById(id));
+    @GetMapping("/{ruc}")
+    public ResponseEntity<Emisor> findByRuc(@PathVariable String ruc) {
+        return ResponseEntity.ok(emisorService.findByRuc(ruc));
     }
 
 }
